@@ -50,7 +50,7 @@ router.post('/students', (req, res) => {
 router.get('/students', (req, res) => {
 	Student.find({}, (err, students) => {
 		if (err) {
-			res.send(err);
+			return res.send(err);
 		}
 
 		return res.send(students);
@@ -62,7 +62,7 @@ router.get('/students/:id', (req, res) => {
 		id: req.params.id
 	}, (err, student) => {
 		if (err) {
-			res.send(err);
+			return res.send(err);
 		}
 
 		return res.send(student);
@@ -76,7 +76,7 @@ router.put('/students/:id', (req, res) => {
 	{ new: true },
 	(err, success) => {
 		if (err) {
-			res.send(err);
+			return res.send(err);
 		}
 
 		return res.send(success);
@@ -88,7 +88,7 @@ router.delete('/students/:id', (req, res) => {
 		id: req.params.id
 	}, (err, success) => {
 		if (err) {
-			res.send(err);
+			return res.send(err);
 		}
 
 		return res.send(success);
