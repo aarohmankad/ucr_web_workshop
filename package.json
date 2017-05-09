@@ -4,11 +4,7 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run dev",
-  	"clean": "rm -rf dist",
-    "build": "npm run clean && mkdir dist && babel src -s -d dist",
-  	"dev": "node bin/dev",
-  	"prod": "npm run build && node bin/production"
+    "start": "node bin/dev",
   },
   "dependencies": {
     "body-parser": "^1.17.1",
